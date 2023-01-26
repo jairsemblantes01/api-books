@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Main-Class: io.helidon.microprofile.cdi.Main
+Class-Path: libs/helidon-microprofile-server-3.0.2.jar libs/jersey-media
+ -json-binding-3.0.8.jar libs/jdbi3-sqlobject-3.36.0.jar libs/jdbi3-core
+ -3.36.0.jar libs/postgresql-42.5.1.jar libs/HikariCP-5.0.1.jar libs/fly
+ way-core-9.11.0.jar libs/jandex-2.4.3.Final.jar libs/helidon-webserver-
+ static-content-3.0.2.jar libs/helidon-webserver-jersey-3.0.2.jar libs/h
+ elidon-webserver-3.0.2.jar libs/helidon-jersey-server-3.0.2.jar libs/he
+ lidon-jersey-client-3.0.2.jar libs/helidon-jersey-media-jsonp-3.0.2.jar
+  libs/helidon-media-jsonp-3.0.2.jar libs/helidon-media-common-3.0.2.jar
+  libs/helidon-microprofile-config-3.0.2.jar libs/helidon-microprofile-c
+ di-3.0.2.jar libs/helidon-config-yaml-mp-3.0.2.jar libs/helidon-config-
+ yaml-3.0.2.jar libs/helidon-config-mp-3.0.2.jar libs/helidon-tracing-3.
+ 0.2.jar libs/helidon-tracing-config-3.0.2.jar libs/helidon-config-encry
+ ption-3.0.2.jar libs/helidon-config-object-mapping-3.0.2.jar libs/helid
+ on-common-key-util-3.0.2.jar libs/helidon-common-configurable-3.0.2.jar
+  libs/helidon-config-3.0.2.jar libs/weld-se-core-3.0.2.jar libs/helidon
+ -common-http-3.0.2.jar libs/helidon-common-context-3.0.2.jar libs/helid
+ on-logging-common-3.0.2.jar libs/helidon-common-media-type-3.0.2.jar li
+ bs/helidon-common-reactive-3.0.2.jar libs/helidon-common-mapper-3.0.2.j
+ ar libs/helidon-common-service-loader-3.0.2.jar libs/helidon-common-cry
+ pto-3.0.2.jar libs/helidon-common-3.0.2.jar libs/jersey-hk2-3.0.8.jar l
+ ibs/jersey-media-json-processing-3.0.8.jar libs/jersey-server-3.0.8.jar
+  libs/jersey-client-3.0.8.jar libs/jersey-common-3.0.8.jar libs/jersey-
+ weld2-se-3.0.8.jar libs/jersey-cdi1x-3.0.8.jar libs/jackson-core-2.14.0
+ .jar libs/jackson-dataformat-toml-2.14.0.jar libs/jackson-databind-2.14
+ .0.jar libs/jackson-annotations-2.14.0.jar libs/jakarta.xml.bind-api-3.
+ 0.1.jar libs/jakarta.ws.rs-api-3.0.0.jar libs/weld-spi-4.0.SP1.jar libs
+ /weld-api-4.0.SP1.jar libs/jakarta.enterprise.cdi-api-3.0.0.jar libs/ja
+ karta.el-api-4.0.0.jar libs/jakarta.interceptor-api-2.0.0.jar libs/jaka
+ rta.annotation-api-2.0.0.jar libs/jakarta.inject-api-2.0.1.jar libs/par
+ sson-1.0.2.jar libs/jakarta.json-api-2.0.2.jar libs/jakarta.json.bind-a
+ pi-2.0.0.jar libs/parsson-media-1.0.2.jar libs/netty-codec-http-4.1.77.
+ Final.jar libs/netty-handler-4.1.77.Final.jar libs/netty-codec-4.1.77.F
+ inal.jar libs/netty-transport-4.1.77.Final.jar libs/netty-buffer-4.1.77
+ .Final.jar libs/yasson-2.0.4.jar libs/snakeyaml-1.32.jar libs/microprof
+ ile-config-api-3.0.1.jar libs/slf4j-api-1.7.36.jar libs/jakarta.validat
+ ion-api-3.0.0.jar libs/weld-environment-common-4.0.2.Final.jar libs/jbo
+ ss-classfilewriter-1.2.5.Final.jar libs/jboss-logging-3.4.2.Final.jar l
+ ibs/netty-resolver-4.1.77.Final.jar libs/netty-common-4.1.77.Final.jar 
+ libs/geantyref-1.3.13.jar libs/caffeine-3.0.3.jar libs/checker-qual-3.5
+ .0.jar libs/osgi-resource-locator-1.0.3.jar libs/jakarta.json-2.0.0-mod
+ ule.jar libs/weld-core-impl-3.0.2.jar libs/hk2-locator-3.0.3.jar libs/j
+ avassist-3.28.0-GA.jar libs/jakarta.activation-2.0.1.jar libs/hk2-api-3
+ .0.3.jar libs/aopalliance-repackaged-3.0.3.jar libs/hk2-utils-3.0.3.jar
+

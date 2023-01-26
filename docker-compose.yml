@@ -1,0 +1,31 @@
+version: '3'
+services:
+  postgres-sql:
+    image: postgres:alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: rockero
+      POSTGRES_DB: distribuida
+    ports:
+      - 5433:5432
+
+#  pgadmin:
+#    image: dpage/pgadmin4
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: jairo.lras@hotmail.com
+#      PGADMIN_DEFAULT_PASSWORD: admin
+#    ports:
+#      - 5050:80
+
+  books-service:
+    image: jairomena/examen:1.0.0
+    environment:
+      DB_USER: postgres
+      DB_PASSWORD: rockero
+      DB_URL: jdbc:postgresql://postgres-sql:5432/distribuida
+    depends_on:
+      - postgres-sql
+    deploy:
+      replicas: 1
+    ports:
+      - 7001:7001
