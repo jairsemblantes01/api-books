@@ -1,0 +1,9 @@
+db:
+  source: jdbc
+  connection:
+    url: jdbc:postgresql://181.215.242.75:10007/distribuida
+    username: ubuntu
+    password: 12345678
+    poolName: hikariPool
+    initializationFailTimeout: -1
+    connectionTimeout: 200000

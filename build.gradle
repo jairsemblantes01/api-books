@@ -33,8 +33,10 @@ dependencies {
     implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.1'
     // https://mvnrepository.com/artifact/org.flywaydb/flyway-core
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '9.11.0'
-
-
+    // https://mvnrepository.com/artifact/io.helidon.dbclient/helidon-dbclient
+    implementation group: 'io.helidon.dbclient', name: 'helidon-dbclient', version: '3.1.0'
+    // https://mvnrepository.com/artifact/io.helidon.dbclient/helidon-dbclient-jdbc
+    implementation group: 'io.helidon.dbclient', name: 'helidon-dbclient-jdbc', version: '3.1.0'
 
 
 }

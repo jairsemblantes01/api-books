@@ -1,45 +1,61 @@
 package com.distribuida.rest;
 
-import java.util.List;
-
-import com.distribuida.servicios.BookRepository;
-import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.ws.rs.*;
-import jakarta.inject.Inject;
 import com.distribuida.db.Book;
+import com.distribuida.servicios.BookRepository;
+import io.helidon.common.reactive.Multi;
+import io.helidon.common.reactive.Single;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
-@ApplicationScoped
+
+
 @Path("/books")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 public class BookRest {
-    @Inject private BookRepository bookRepository;
+
+@Inject
+    private BookRepository bookService;
+
+
+    @GET
+    @Path("/")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Single findAll(){
+        // dbConfig.test();
+        return bookService.findAll();
+    }
+
+
 
     @GET
     @Path("/{id}")
-    public Book findById(@PathParam("id") Integer id){
-        return bookRepository.findById(id);
+    @Produces(MediaType.APPLICATION_JSON)
+    public Single<Book> findById(@PathParam("id") Integer id){
+        return bookService.findById(id);
     }
-
-    @GET
-    public List<Book> findAll(){
-        return bookRepository.findAll();
-    }
-
+    
+/*
     @POST
-    public void insert(Book book){
-        bookRepository.insert(book);
+    @Path("/")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Single<Book> pushBook(Book book){
+        return bookService.pushBook(book);
     }
+    
 
     @PUT
     @Path("/{id}")
-    public void update(Book book,@PathParam("id") Integer id){
-        book.setId(id);
-        bookRepository.update(book);
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Book editBook(Book book, @PathParam("id") Integer id){
+        return bookService.editBook(book, id);
     }
+
     @DELETE
     @Path("/{id}")
-    public void delete(@PathParam("id") Integer id) {
-        bookRepository.delete(id);
+    public Single<Long> deleteBook(@PathParam("id") Integer id){
+        return bookService.deleteBook(id);
     }
+*/
+
 }
