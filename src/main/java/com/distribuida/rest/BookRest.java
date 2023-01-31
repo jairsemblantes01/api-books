@@ -33,7 +33,6 @@ public class BookRest {
         return bookService.findById(id);
     }
     
-/*
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -47,8 +46,9 @@ public class BookRest {
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Book editBook(Book book, @PathParam("id") Integer id){
-        return bookService.editBook(book, id);
+    public Boolean editBook(Book book, @PathParam("id") Integer id){
+        bookService.editBook(book, id);
+        return true;
     }
 
     @DELETE
@@ -56,6 +56,5 @@ public class BookRest {
     public Single<Long> deleteBook(@PathParam("id") Integer id){
         return bookService.deleteBook(id);
     }
-*/
 
 }

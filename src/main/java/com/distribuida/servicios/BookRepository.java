@@ -5,14 +5,7 @@ import com.distribuida.db.EntityUtils;
 import io.helidon.common.reactive.Single;
 import io.helidon.dbclient.DbClient;
 import jakarta.enterprise.context.ApplicationScoped;
-import jakarta.json.Json;
 import jakarta.json.JsonArray;
-import jakarta.json.JsonArrayBuilder;
-import jakarta.json.JsonObject;
-
-import java.util.List;
-
-import java.util.logging.Logger;
 
 
 @ApplicationScoped
@@ -21,11 +14,9 @@ public class BookRepository implements BooksService{
     private DbClient dbClient = DbConfig.dbClient();
 
     public Single<JsonArray> findAll() {
-      System.out.println("find all");
         var clients =  this.dbClient.execute(exec -> exec
                         .query("SELECT * FROM books WHERE id > 0")
                 ).map(data -> data.as(Book.class));
-      System.out.printf("clients: %s", clients);
         return clients.collectList().map(EntityUtils::toJsonArray);
     }
 
@@ -42,7 +33,7 @@ public class BookRepository implements BooksService{
     }
 
     public Single<Long> editBook(Book book, Integer id) {
-        return this.dbClient
+        this.dbClient
                 .execute(exec -> exec
                         .createUpdate("UPDATE books SET title=:title, author=:author, price=:price, isbn=:isbn WHERE id=:id")
                         .addParam("title", book.getTitle())
@@ -51,6 +42,7 @@ public class BookRepository implements BooksService{
                         .addParam("price", book.getPrice())
                         .execute()
                 );
+        return Single.just(1L);
     }
 
     public Single<Book> pushBook(Book book) {
@@ -60,7 +52,10 @@ public class BookRepository implements BooksService{
 
                 )
                 .first()
-                .map(data -> data.column("id").as(Book.class));
+                .map(data -> {
+                    book.setId(data.column("id").as(Integer.class));
+                    return book;
+                });
     }
 
     public Single<Long> deleteBook(Integer id) {

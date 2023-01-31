@@ -1,19 +1,14 @@
-create table if not exists public.authors (
-            id serial UNIQUE,
+create table if not exists authors (
+            id serial UNIQUE PRIMARY KEY NOT NULL,
             first_name varchar(64) NOT NULL,
-            last_name varchar(64) NOT NULL,
-            CONSTRAINT authors_id_pkey PRIMARY KEY (id)
+            last_name varchar(64) NOT NULL
         );
 
-create table if not exists public.books
+create table if not exists books
 (
-    id serial UNIQUE,
+    id serial UNIQUE NOT NULL PRIMARY KEY,
     isbn varchar(16) NOT NULL,
     title varchar(128) NOT NULL,
-    author integer NOT NULL,
-
-    price float8 NOT NULL,
-    CONSTRAINT id PRIMARY KEY (id),
-    CONSTRAINT fk_author FOREIGN KEY (author)
-        REFERENCES authors (id)
+    author integer NOT NULL REFERENCES authors(id) ,
+    price float8 NOT NULL
 );
